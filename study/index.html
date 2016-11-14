@@ -5,20 +5,26 @@
 </head>
 <body>
 <script>
-Function.prototype.bind = function(context) {
-   var fn = this;
-   return function() {
-      return fn.apply(context, arguments);
-   };
-}
-var HelloPage = {
-   name: 'Habrahabr',
-   init: function() {
-      console.log('Hello, ' + this.name);
+var MyModule = (function() {
+   var name = 'Habrahabr';
+   function sayPreved() {
+      console.log('PREVED ' + name.toUpperCase());
    }
+   return {
+      sayPrevedToHabrahabr: function() {
+         sayPreved(name);
+      }
+   }
+})();
+MyModule.sayPrevedToHabrahabr(); //alerts «PREVED Habrahabr»
+
+for (var i = 0; i < links.length; i++) {
+   (function(i) {
+      links[i].onclick = function() {
+         console.log(i);
+      }
+   })(i);
 }
-//window.onload = HelloPage.init; //алертнул бы undefined, т.к. this указывало бы на window
-window.onload = HelloPage.init.bind(HelloPage); //вот теперь всё работает
 </script>
 </body>
 </html>

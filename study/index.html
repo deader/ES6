@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<script>
+Function.prototype.bind = function(context) {
+   var fn = this;
+   return function() {
+      return fn.apply(context, arguments);
+   };
+}
+var HelloPage = {
+   name: 'Habrahabr',
+   init: function() {
+      console.log('Hello, ' + this.name);
+   }
+}
+//window.onload = HelloPage.init; //алертнул бы undefined, т.к. this указывало бы на window
+window.onload = HelloPage.init.bind(HelloPage); //вот теперь всё работает
+</script>
+</body>
+</html>

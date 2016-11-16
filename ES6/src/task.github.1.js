@@ -1,11 +1,15 @@
+(function () {
+
 //  Обьявляем массив
 var arr = [];
 
 // Заполнение массива элементами от 1 до 100 рандомно
 for (let i = 1; i < 100; i++) {
     arr[i] = Math.floor(Math.random() * (100 - 1) + 1);
-    console.log(arr[i]);
 }
+
+// Вывод массива в консоль
+console.log(arr);
 
 // Поиск min и max
 function findMinMax(array = [], operator) {
@@ -36,6 +40,7 @@ function findMinMax(array = [], operator) {
     }
 }
 
+// Вывод min и max
 findMinMax(arr, 'min');
 findMinMax(arr, 'max');
 
@@ -52,7 +57,7 @@ function objArr(array = []) {
     }
 
     for (let i = 1; i <= 74; i++) {
-        // obj[i] = array[i];
+        obj[i] = array[i];
         // document.write(i + ' : ');
         // document.write(obj[i] + '<br>');
         //console.log(`${i} : ${array[i]}`);
@@ -88,3 +93,5 @@ console.log(arr2);
 
 var arr = _.difference(arr1, arr2);
 console.log(arr);
+
+})();

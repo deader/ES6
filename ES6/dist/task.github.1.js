@@ -78,22 +78,16 @@
     var arr1 = [1, 2, 2, 2, 43, 32, 23, 6, 7, 8, 9];
     var arr2 = [14, 2, 13, 43, 23, 6, 7, 8, 9];
 
-    // Удаление одинаковых элементов и вывод массива arr1 без них
-    // function filterNew(arr1 = [], arr2 = []) { 
-    //     arr1 = [arr1,...arr2];
-
-    //     for (var i = 0; i <= arr1.length; i++) {
-    //         for (var j = 1; j <= arr1.length; j++) {
-    //             if (arr1[j] == arr1[i]) {  
-    //                 arr1.splice(arr1[i]); // удаляем одинаковый элемент
-    //             }    
+    // Удаление одинаковых элементов и вывод массива arr1 без них (чистый JS)
+    // function filterNew(arr1, arr2) {
+    //     for (var i = 0; i < arr1.length; i++) {
+    //         for (var j = 0; j < arr2.length; j++) {
+    //             if (arr1[i] == arr2[j]) {
+    //                 arr1.splice(i--, 1);
+    //             }
     //         }
     //     }
-    //     return arr1; // выводим массив без одинаковых элементов на экран
     // }
-    // filterNew(arr1, arr2);
-    // console.log(arr1);
-    // console.log(filterNew(arr1, arr2));
 
     console.log(arr1);
     console.log(arr2);

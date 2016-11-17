@@ -11,6 +11,7 @@
     for (var i = 0; i < 100; i++) {
 
         arr[i] = Math.floor(Math.random() * 100) + 1;
+        git;
     }
 
     console.log(arr);

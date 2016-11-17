@@ -31,6 +31,7 @@ class Task {
 Task.count = 0;
 
 let task = new Task('Убрать комнату');
+
 console.log(task.done, task._done);
 task.complete();
 console.log(task.done, task._done);

@@ -47,6 +47,7 @@ var Task = function () {
 Task.count = 0;
 
 var task = new Task('Убрать комнату');
+
 console.log(task.done, task._done);
 task.complete();
 console.log(task.done, task._done);

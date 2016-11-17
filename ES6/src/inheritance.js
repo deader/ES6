@@ -50,3 +50,5 @@ subtask.complete();
 
 console.log(task);
 console.log(subtask);
+
+// Было изучено сравнение классов es5 и es6

@@ -50,11 +50,11 @@ person.greet();
 
 // Со стрелочными функциями нельзя использовать следующие функции:
 // new
-let Task = () => console.log('Creating a task');
+// let Task = () => console.log('Creating a task');
 
-let task = new Task();
+// let task = new Task();
 
 // other
-Task.bind();
-Task.call();
-Task.apply();
+// Task.bind();
+// Task.call();
+// Task.apply();

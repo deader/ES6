@@ -1,3 +1,6 @@
+// Деструктивное присваивание массивов
+console.log('Деструктивное присваивание массивов');
+
 // let [js, php, py, rb] = ['JavaScript', 'PHP', 'Python', 'Ruby'];
 
 // console.log(js, php, py, rb);
@@ -32,3 +35,43 @@ let no = 'No';
 console.log('Yes is', yes);
 console.log('No is', no);
 console.log('o_O');
+
+
+
+// Деструктивное присваивание объектов
+console.log('Деструктивное присваивание объектов');
+
+let user = {
+    firstName: 'John', 
+    lastName: 'Doe',
+    social: {
+        facebook: 'johndoe',
+        twitter: 'jdoe'
+    }
+};
+
+let {firstName: first, lastName: last, social: { facebook: fb }, age = 25} = user;
+
+console.log(first, last, fb, age);
+
+
+function post(url, {data: { firstName, lastName }, cache}) {
+    console.log(firstName, lastName, cache);
+}
+
+let results = post('api/users', {data: user, cache: false});
+
+function getUserInfo() {
+    return {
+        firstName: 'John', 
+        lastName: 'Doe',
+        social: {
+            facebook: 'johndoe',
+            twitter: 'jdoe'
+        }
+    };
+}
+
+let { firstName, lastName, social: { twitter } } = getUserInfo();
+
+console.log(firstName, lastName, twitter);

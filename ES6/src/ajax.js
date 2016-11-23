@@ -81,7 +81,7 @@ $(function () {
 
 
 
-// Новый тест 2
+// Новый тест 2 с фреймворком scriptjava.js
 
 
 function SendGet() {
@@ -119,5 +119,40 @@ function SendHead() {
 		success:function (data) {//возвращаемый результат от сервера
 			$$('result',$$('result').innerHTML+'<br />'+data);
 		}
+	});
+}
+
+// Полный вариант
+function Send() {
+	$$a({
+		type:'get',//тип запроса: get,post либо head
+		url:'',//url адрес файла обработчика
+		data:{},//параметры запроса
+		response:'text',//тип возвращаемого ответа text либо xml
+		header:{//заголовки запроса, работают только если установлен response:'xml'
+			'Content-Type':'application/x-www-form-urlencoded; charset=windows-1251',
+			'Referer':location.href
+		},
+		async:true,//асинхронный если установлено true или синхронный запрос если false
+		username:'',//имя пользователя если требуется для авторизации
+		password:'',//пароль пользователя если требуется для авторизации
+		errrep:true,//отображение ошибок error если true
+		error:function(num) {//ошибки запроса
+			var arr=['Your browser does not support Ajax',
+						'Request failed',
+						'Address does not exist',
+						'The waiting time left'];
+			alert(arr[num]);
+		},
+		status:function (number) {//код состояния отправки от 1 до 4
+			alert(number);//вывожу код состояния отправки
+		},
+		endstatus:function (number) {//код состояния запроса например 404, 200
+			alert(number);//вывожу код состояния запроса
+		},
+		success:function (data) {//возвращаемый результат от сервера
+			alert(data);//вывожу результат запроса
+		},
+		timeout:5000//таймаут запроса
 	});
 }
